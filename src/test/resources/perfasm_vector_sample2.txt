@@ -1,0 +1,485 @@
+....[Hottest Region 1]..............................................................................
+c2, level 4, com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub, version 665 (1253 bytes)
+
+                        0x00007f6d50030f20: jne    0x00007f6d5003143e
+                        0x00007f6d50030f26: mov    $0x1,%ebp
+         ╭              0x00007f6d50030f2b: jmpq   0x00007f6d500312c0
+         │ ↗            0x00007f6d50030f30: vmovd  %xmm3,%esi
+         │ │            0x00007f6d50030f34: vmovd  %xmm2,%edx
+         │ │            0x00007f6d50030f38: vmovd  %xmm5,%ebx
+         │ │            0x00007f6d50030f3c: mov    0x60(%rsp),%ebp
+         │ │            0x00007f6d50030f40: vmovq  %xmm4,%r10
+         │ │        ↗   0x00007f6d50030f45: vmovd  %esi,%xmm3
+         │ │        │   0x00007f6d50030f49: vmovd  %edx,%xmm2
+  0.05%  │ │        │   0x00007f6d50030f4d: vmovd  %ebx,%xmm5
+         │ │        │   0x00007f6d50030f51: mov    %ebp,0x60(%rsp)
+         │ │        │   0x00007f6d50030f55: vmovq  %r10,%xmm4                     ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │ │        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+         │ │        │   0x00007f6d50030f5a: nopw   0x0(%rax,%rax,1)               ;*invokevirtual fromArray {reexecute=0 rethrow=0 return_oop=0}
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@53 (line 77)
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.09%  │↗│        │   0x00007f6d50030f60: vmovdqu 0x10(%rax,%r9,8),%ymm6
+  0.01%  │││        │   0x00007f6d50030f67: vpand  0x10(%r13,%r9,8),%ymm6,%ymm6   ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  2.19%  │││        │   0x00007f6d50030f6e: vmovdqu %ymm6,0x10(%r12,%rcx,8)       ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@40 (line 76)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.10%  │││        │   0x00007f6d50030f75: mov    %r9d,%r10d
+  0.00%  │││        │   0x00007f6d50030f78: add    $0x1c,%r10d                    ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  2.07%  │││        │   0x00007f6d50030f7c: movslq %r10d,%r10                     ;*putfield arg$1 {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::&lt;init&gt;@6
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@5
+         │││        │                                                             ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+         │││        │                                                             ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@65 (line 77)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.04%  │││        │   0x00007f6d50030f7f: vmovq  %r10,%xmm6
+  0.08%  │││        │   0x00007f6d50030f84: mov    %r9d,%ebx
+         │││        │   0x00007f6d50030f87: add    $0x4,%ebx                      ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  2.15%  │││        │   0x00007f6d50030f8a: movslq %ebx,%r10                      ;*getfield left {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@48 (line 77)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+         │││        │   0x00007f6d50030f8d: vmovdqu 0x10(%rax,%r10,8),%ymm7
+  0.14%  │││        │   0x00007f6d50030f94: vpand  0x10(%r13,%r10,8),%ymm7,%ymm7  ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  3.10%  │││        │   0x00007f6d50030f9b: vmovdqu %ymm7,0x30(%r12,%rcx,8)       ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@40 (line 76)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.07%  │││        │   0x00007f6d50030fa2: movslq %r9d,%rbx
+  0.06%  │││        │   0x00007f6d50030fa5: vmovdqu 0x50(%rax,%rbx,8),%ymm7
+  0.15%  │││        │   0x00007f6d50030fab: vpand  0x50(%r13,%rbx,8),%ymm7,%ymm7
+  2.66%  │││        │   0x00007f6d50030fb2: popcnt 0x20(%r12,%rcx,8),%rsi
+  0.04%  │││        │   0x00007f6d50030fb9: add    %r8d,%esi
+  0.14%  │││        │   0x00007f6d50030fbc: popcnt 0x38(%r12,%rcx,8),%r10
+  3.25%  │││        │   0x00007f6d50030fc3: add    %esi,%r10d
+  0.66%  │││        │   0x00007f6d50030fc6: popcnt 0x30(%r12,%rcx,8),%rsi
+  0.18%  │││        │   0x00007f6d50030fcd: popcnt 0x18(%r12,%rcx,8),%r8
+  0.00%  │││        │   0x00007f6d50030fd4: add    %r11d,%r8d
+  1.47%  │││        │   0x00007f6d50030fd7: add    %esi,%r8d
+  0.72%  │││        │   0x00007f6d50030fda: popcnt 0x48(%r12,%rcx,8),%rdx
+  0.03%  │││        │   0x00007f6d50030fe1: add    %r8d,%edx
+  0.47%  │││        │   0x00007f6d50030fe4: popcnt 0x40(%r12,%rcx,8),%rsi
+  1.57%  │││        │   0x00007f6d50030feb: popcnt 0x10(%r12,%rcx,8),%r11
+  0.31%  │││        │   0x00007f6d50030ff2: add    %edi,%r11d
+  0.06%  │││        │   0x00007f6d50030ff5: popcnt 0x28(%r12,%rcx,8),%r8
+  0.53%  │││        │   0x00007f6d50030ffc: add    %r11d,%r8d
+  1.97%  │││        │   0x00007f6d50030fff: add    %esi,%r8d                      ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  1.15%  │││        │   0x00007f6d50031002: vmovdqu %ymm7,0x10(%r12,%rcx,8)       ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@31 (line 76)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.02%  │││        │   0x00007f6d50031009: mov    %r9d,%r11d
+  0.02%  │││        │   0x00007f6d5003100c: add    $0xc,%r11d                     ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.81%  │││        │   0x00007f6d50031010: movslq %r11d,%r11                     ;*invokevirtual fromArray {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@53 (line 77)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  1.16%  │││        │   0x00007f6d50031013: vmovdqu 0x10(%rax,%r11,8),%ymm7
+  0.06%  │││        │   0x00007f6d5003101a: vpand  0x10(%r13,%r11,8),%ymm7,%ymm7  ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  1.00%  │││        │   0x00007f6d50031021: vmovdqu %ymm7,0x30(%r12,%rcx,8)       ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@30 (line 76)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  1.12%  │││        │   0x00007f6d50031028: vmovdqu 0x90(%rax,%rbx,8),%ymm7
+  0.10%  │││        │   0x00007f6d50031031: vpand  0x90(%r13,%rbx,8),%ymm7,%ymm7
+  1.11%  │││        │   0x00007f6d5003103b: mov    %r9d,%edi
+  1.13%  │││        │   0x00007f6d5003103e: add    $0x14,%edi                     ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.03%  │││        │   0x00007f6d50031041: movslq %edi,%rbp                      ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@21 (line 76)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.21%  │││        │   0x00007f6d50031044: popcnt 0x38(%r12,%rcx,8),%rdi
+  2.36%  │││        │   0x00007f6d5003104b: popcnt 0x30(%r12,%rcx,8),%r11
+  1.53%  │││        │   0x00007f6d50031052: popcnt 0x18(%r12,%rcx,8),%rsi
+  0.04%  │││        │   0x00007f6d50031059: add    %esi,%edx
+  0.09%  │││        │   0x00007f6d5003105b: add    %r11d,%edx
+  1.45%  │││        │   0x00007f6d5003105e: popcnt 0x48(%r12,%rcx,8),%r11
+  2.73%  │││        │   0x00007f6d50031065: add    %edx,%r11d
+  1.30%  │││        │   0x00007f6d50031068: popcnt 0x40(%r12,%rcx,8),%rdx
+  0.58%  │││        │   0x00007f6d5003106f: popcnt 0x10(%r12,%rcx,8),%rsi
+  0.27%  │││        │   0x00007f6d50031076: add    %esi,%r8d
+  0.21%  │││        │   0x00007f6d50031079: popcnt 0x28(%r12,%rcx,8),%rsi
+  1.44%  │││        │   0x00007f6d50031080: add    %r8d,%esi
+  1.27%  │││        │   0x00007f6d50031083: add    %edx,%esi
+  1.25%  │││        │   0x00007f6d50031085: popcnt 0x20(%r12,%rcx,8),%r8
+  0.02%  │││        │   0x00007f6d5003108c: add    %r10d,%r8d
+  1.69%  │││        │   0x00007f6d5003108f: add    %r8d,%edi                      ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  1.18%  │││        │   0x00007f6d50031092: vmovdqu %ymm7,0x10(%r12,%rcx,8)       ;*goto {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@193 (line 76)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.35%  │││        │   0x00007f6d50031099: vmovdqu 0x10(%rax,%rbp,8),%ymm7
+  0.44%  │││        │   0x00007f6d5003109f: vpand  0x10(%r13,%rbp,8),%ymm7,%ymm7  ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  2.28%  │││        │   0x00007f6d500310a6: vmovdqu %ymm7,0x30(%r12,%rcx,8)       ;*putfield arg$1 {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::&lt;init&gt;@6
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@5
+         │││        │                                                             ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+         │││        │                                                             ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@53 (line 77)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.42%  │││        │   0x00007f6d500310ad: vmovdqu 0xd0(%rax,%rbx,8),%ymm7
+  0.02%  │││        │   0x00007f6d500310b6: vpand  0xd0(%r13,%rbx,8),%ymm7,%ymm7
+  1.79%  │││        │   0x00007f6d500310c0: popcnt 0x20(%r12,%rcx,8),%r10
+  0.39%  │││        │   0x00007f6d500310c7: add    %edi,%r10d
+  0.01%  │││        │   0x00007f6d500310ca: popcnt 0x38(%r12,%rcx,8),%rbx
+  1.65%  │││        │   0x00007f6d500310d1: add    %r10d,%ebx
+  1.40%  │││        │   0x00007f6d500310d4: popcnt 0x30(%r12,%rcx,8),%r10
+  1.50%  │││        │   0x00007f6d500310db: popcnt 0x18(%r12,%rcx,8),%r8
+  0.00%  │││        │   0x00007f6d500310e2: add    %r11d,%r8d
+  0.53%  │││        │   0x00007f6d500310e5: add    %r10d,%r8d
+  1.58%  │││        │   0x00007f6d500310e8: popcnt 0x48(%r12,%rcx,8),%rbp
+  0.04%  │││        │   0x00007f6d500310ef: add    %r8d,%ebp
+  1.79%  │││        │   0x00007f6d500310f2: popcnt 0x40(%r12,%rcx,8),%r10
+  1.98%  │││        │   0x00007f6d500310f9: popcnt 0x10(%r12,%rcx,8),%rdi
+  0.07%  │││        │   0x00007f6d50031100: add    %esi,%edi
+  0.04%  │││        │   0x00007f6d50031102: popcnt 0x28(%r12,%rcx,8),%r11
+  0.05%  │││        │   0x00007f6d50031109: add    %edi,%r11d
+  2.00%  │││        │   0x00007f6d5003110c: add    %r10d,%r11d                    ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.36%  │││        │   0x00007f6d5003110f: vmovdqu %ymm7,0x10(%r12,%rcx,8)       ;*invokestatic linkToStatic {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+         │││        │                                                             ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@53 (line 77)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.01%  │││        │   0x00007f6d50031116: vmovq  %xmm6,%r10
+  0.01%  │││        │   0x00007f6d5003111b: vmovdqu 0x10(%rax,%r10,8),%ymm7
+  1.78%  │││        │   0x00007f6d50031122: vpand  0x10(%r13,%r10,8),%ymm7,%ymm6  ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.53%  │││        │   0x00007f6d50031129: vmovdqu %ymm6,0x30(%r12,%rcx,8)       ;*putfield arg$1 {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::&lt;init&gt;@6
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@5
+         │││        │                                                             ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+         │││        │                                                             ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@53 (line 77)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.03%  │││        │   0x00007f6d50031130: popcnt 0x10(%r12,%rcx,8),%rdi
+  1.77%  │││        │   0x00007f6d50031137: add    %r11d,%edi
+  0.45%  │││        │   0x00007f6d5003113a: popcnt 0x38(%r12,%rcx,8),%r11
+  2.70%  │││        │   0x00007f6d50031141: popcnt 0x20(%r12,%rcx,8),%r8
+  0.01%  │││        │   0x00007f6d50031148: add    %ebx,%r8d
+  0.06%  │││        │   0x00007f6d5003114b: add    %r11d,%r8d
+  2.14%  │││        │   0x00007f6d5003114e: popcnt 0x48(%r12,%rcx,8),%r10
+  0.07%  │││        │   0x00007f6d50031155: popcnt 0x30(%r12,%rcx,8),%rdx
+  0.20%  │││        │   0x00007f6d5003115c: popcnt 0x18(%r12,%rcx,8),%r11
+  4.15%  │││        │   0x00007f6d50031163: add    %ebp,%r11d
+  2.32%  │││        │   0x00007f6d50031166: add    %edx,%r11d
+  2.08%  │││        │   0x00007f6d50031169: add    %r10d,%r11d
+  2.26%  │││        │   0x00007f6d5003116c: popcnt 0x40(%r12,%rcx,8),%r10
+  0.00%  │││        │   0x00007f6d50031173: popcnt 0x28(%r12,%rcx,8),%rdx
+  0.02%  │││        │   0x00007f6d5003117a: add    %edx,%edi
+  0.03%  │││        │   0x00007f6d5003117c: add    %r10d,%edi                     ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │││        │                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │││        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  2.20%  │││        │   0x00007f6d5003117f: add    $0x20,%r9d
+  0.00%  │││        │   0x00007f6d50031183: cmp    0x60(%rsp),%r9d
+         │╰│        │   0x00007f6d50031188: jl     0x00007f6d50030f60             ;*putfield arg$1 {reexecute=0 rethrow=0 return_oop=0}
+         │ │        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::&lt;init&gt;@6
+         │ │        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@5
+         │ │        │                                                             ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+         │ │        │                                                             ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+         │ │        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+         │ │        │                                                             ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@65 (line 77)
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+         │ │        │   0x00007f6d5003118e: mov    0x108(%r15),%r10               ; ImmutableOopMap{rcx=NarrowOop rax=Oop r13=Oop r14=Oop xmm0=Oop xmm4=Oop [104]=Oop [8]=Oop }
+         │ │        │                                                             ;*goto {reexecute=1 rethrow=0 return_oop=0}
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@193 (line 76)
+         │ │        │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.01%  │ │        │   0x00007f6d50031195: test   %eax,(%r10)                    ;   {poll}
+  0.06%  │ │        │   0x00007f6d50031198: cmp    0x60(%rsp),%r9d
+         │ ╰        │   0x00007f6d5003119d: jl     0x00007f6d50030f30
+         │          │   0x00007f6d500311a3: vmovd  %xmm3,%esi
+         │          │   0x00007f6d500311a7: vmovd  %xmm2,%edx
+         │          │   0x00007f6d500311ab: vmovd  %xmm5,%ebx
+  0.07%  │         ↗│   0x00007f6d500311af: cmp    %esi,%r9d
+         │  ╭      ││   0x00007f6d500311b2: jge    0x00007f6d50031270
+  0.03%  │  │ ↗    ││   0x00007f6d500311b8: cmp    %edx,%r9d
+         │  │ │    ││   0x00007f6d500311bb: jge    0x00007f6d500314c6
+  0.09%  │  │ │    ││   0x00007f6d500311c1: cmp    %ebx,%r9d
+         │  │ │    ││   0x00007f6d500311c4: jge    0x00007f6d50031506
+  0.02%  │  │ │    ││   0x00007f6d500311ca: vmovd  %ebx,%xmm4
+  0.04%  │  │ │    ││   0x00007f6d500311ce: vmovd  %edx,%xmm2
+  0.02%  │  │ │    ││   0x00007f6d500311d2: mov    %esi,%ebp
+  0.08%  │  │ │    ││   0x00007f6d500311d4: vmovdqu 0x10(%rax,%r9,8),%ymm3
+  0.03%  │  │ │    ││   0x00007f6d500311db: vpand  0x10(%r13,%r9,8),%ymm3,%ymm3   ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.10%  │  │ │    ││   0x00007f6d500311e2: vmovdqu %ymm3,0x10(%r12,%rcx,8)       ;*ifnonnull {reexecute=0 rethrow=0 return_oop=0}
+         │  │ │    ││                                                             ; - java.util.Objects::requireNonNull@1 (line 220)
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::and@1 (line 399)
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::and@2 (line 39)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@104 (line 78)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.09%  │  │ │    ││   0x00007f6d500311e9: mov    %r9d,%r10d
+  0.03%  │  │ │    ││   0x00007f6d500311ec: add    $0x4,%r10d                     ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.05%  │  │ │    ││   0x00007f6d500311f0: movslq %r10d,%r10                     ;*invokedynamic {reexecute=0 rethrow=0 return_oop=0}
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::and@22 (line 401)
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::and@2 (line 39)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@104 (line 78)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+         │  │ │    ││   0x00007f6d500311f3: vmovdqu 0x10(%rax,%r10,8),%ymm3
+  0.09%  │  │ │    ││   0x00007f6d500311fa: vpand  0x10(%r13,%r10,8),%ymm3,%ymm3  ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.21%  │  │ │    ││   0x00007f6d50031201: vmovdqu %ymm3,0x30(%r12,%rcx,8)       ;*invokestatic requireNonNull {reexecute=0 rethrow=0 return_oop=0}
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::and@1 (line 399)
+         │  │ │    ││                                                             ; - jdk.incubator.vector.Long256Vector::and@2 (line 39)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@104 (line 78)
+         │  │ │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.02%  │  │ │    ││   0x00007f6d50031208: popcnt 0x28(%r12,%rcx,8),%rdx
+  0.10%  │  │ │    ││   0x00007f6d5003120f: popcnt 0x20(%r12,%rcx,8),%r10
+  0.03%  │  │ │    ││   0x00007f6d50031216: add    %r8d,%r10d
+  0.06%  │  │ │    ││   0x00007f6d50031219: popcnt 0x38(%r12,%rcx,8),%r8
+  0.28%  │  │ │    ││   0x00007f6d50031220: add    %r10d,%r8d
+  0.14%  │  │ │    ││   0x00007f6d50031223: popcnt 0x30(%r12,%rcx,8),%r10
+  0.07%  │  │ │    ││   0x00007f6d5003122a: popcnt 0x18(%r12,%rcx,8),%rsi
+  0.01%  │  │ │    ││   0x00007f6d50031231: add    %r11d,%esi
+  0.01%  │  │ │    ││   0x00007f6d50031234: add    %r10d,%esi
+  0.16%  │  │ │    ││   0x00007f6d50031237: popcnt 0x48(%r12,%rcx,8),%r11
+  0.04%  │  │ │    ││   0x00007f6d5003123e: add    %esi,%r11d
+  0.12%  │  │ │    ││   0x00007f6d50031241: popcnt 0x40(%r12,%rcx,8),%r10
+  0.11%  │  │ │    ││   0x00007f6d50031248: popcnt 0x10(%r12,%rcx,8),%rbx
+  0.04%  │  │ │    ││   0x00007f6d5003124f: add    %edi,%ebx
+  0.01%  │  │ │    ││   0x00007f6d50031251: add    %ebx,%edx
+  0.03%  │  │ │    ││   0x00007f6d50031253: add    %r10d,%edx
+  0.11%  │  │ │    ││   0x00007f6d50031256: add    $0x8,%r9d
+  0.04%  │  │ │    ││   0x00007f6d5003125a: cmp    %ebp,%r9d
+         │  │╭│    ││   0x00007f6d5003125d: jge    0x00007f6d50031272
+  0.00%  │  │││    ││   0x00007f6d5003125f: mov    %edx,%edi
+  0.03%  │  │││    ││   0x00007f6d50031261: mov    %ebp,%esi
+  0.14%  │  │││    ││   0x00007f6d50031263: vmovd  %xmm2,%edx
+  0.03%  │  │││    ││   0x00007f6d50031267: vmovd  %xmm4,%ebx
+  0.00%  │  ││╰    ││   0x00007f6d5003126b: jmpq   0x00007f6d500311b8
+         │  ↘│     ││   0x00007f6d50031270: mov    %edi,%edx
+  0.02%  │   ↘     ││   0x00007f6d50031272: add    %r11d,%edx                     ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │         ││                                                             ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │         ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │         ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.04%  │         ││   0x00007f6d50031275: add    %r8d,%edx
+  0.05%  │         ││   0x00007f6d50031278: mov    %r14,%r10
+  0.01%  │         ││   0x00007f6d5003127b: vmovq  %xmm0,%r8
+  0.00%  │         ││   0x00007f6d50031280: vmovq  %xmm1,%rbp
+  0.00%  │         ││↗  0x00007f6d50031285: mov    %r8,0x60(%rsp)
+  0.05%  │         │││  0x00007f6d5003128a: mov    %r10,0x70(%rsp)
+  0.01%  │         │││  0x00007f6d5003128f: mov    0x8(%rsp),%rsi
+  0.01%  │         │││  0x00007f6d50031294: vzeroupper
+  0.09%  │         │││  0x00007f6d50031297: callq  0x00007f6d48548f00             ; ImmutableOopMap{[96]=Oop [104]=Oop [112]=Oop [8]=Oop }
+         │         │││                                                            ;*invokevirtual consume {reexecute=0 rethrow=0 return_oop=0}
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@20 (line 158)
+         │         │││                                                            ;   {optimized virtual_call}
+  0.04%  │         │││  0x00007f6d5003129c: mov    0x60(%rsp),%r8                 ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │         │││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.01%  │         │││  0x00007f6d500312a1: movzbl 0x94(%r8),%r10d                ;*putfield arg$1 {reexecute=0 rethrow=0 return_oop=0}
+         │         │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::&lt;init&gt;@6
+         │         │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@5
+         │         │││                                                            ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+         │         │││                                                            ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+         │         │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+         │         │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@65 (line 77)
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.01%  │         │││  0x00007f6d500312a9: mov    0x108(%r15),%r11               ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+         │         │││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.03%  │         │││  0x00007f6d500312b0: add    $0x1,%rbp                      ; ImmutableOopMap{r8=Oop [104]=Oop [112]=Oop [8]=Oop }
+         │         │││                                                            ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+         │         │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@33 (line 160)
+  0.00%  │         │││  0x00007f6d500312b4: test   %eax,(%r11)                    ;   {poll}
+         │         │││  0x00007f6d500312b7: test   %r10d,%r10d
+         │     ╭   │││  0x00007f6d500312ba: jne    0x00007f6d50031443
+  0.01%  ↘     │   │││  0x00007f6d500312c0: mov    0x70(%rsp),%r10                ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+               │   │││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+               │   │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               │   │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.05%        │   │││  0x00007f6d500312c5: mov    0xc(%r10),%edi                 ;*invokevirtual vpandStorePopcntUnrolled {reexecute=0 rethrow=0 return_oop=0}
+               │   │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.02%        │   │││  0x00007f6d500312c9: test   %edi,%edi
+               │╭  │││  0x00007f6d500312cb: jle    0x00007f6d50031437             ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.00%        ││  │││  0x00007f6d500312d1: mov    0x18(%r10),%ecx                ;*new {reexecute=0 rethrow=0 return_oop=0}
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@0
+               ││  │││                                                            ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+               ││  │││                                                            ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@53 (line 77)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.01%        ││  │││  0x00007f6d500312d5: mov    0x10(%r10),%esi                ;*putfield arg$1 {reexecute=0 rethrow=0 return_oop=0}
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::&lt;init&gt;@6
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@5
+               ││  │││                                                            ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+               ││  │││                                                            ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@65 (line 77)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.04%        ││  │││  0x00007f6d500312d9: mov    0xc(%r12,%rsi,8),%edx          ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+               ││  │││                                                            ; implicit exception: dispatches to 0x00007f6d5003149e
+  0.02%        ││  │││  0x00007f6d500312de: mov    0x14(%r10),%r9d                ;*putfield arg$1 {reexecute=0 rethrow=0 return_oop=0}
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::&lt;init&gt;@6
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species$$Lambda$46/0x00000008000dbc40::get$Lambda@5
+               ││  │││                                                            ; - java.lang.invoke.DirectMethodHandle$Holder::invokeStatic@10
+               ││  │││                                                            ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@5
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@38 (line 1297)
+               ││  │││                                                            ; - jdk.incubator.vector.Long256Vector$Long256Species::fromArray@3 (line 1150)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@65 (line 77)
+               ││  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.01%        ││  │││  0x00007f6d500312e2: mov    0xc(%r12,%r9,8),%ebx           ; implicit exception: dispatches to 0x00007f6d5003149e
+  0.00%        ││  │││  0x00007f6d500312e7: mov    0xc(%r12,%rcx,8),%r11d         ; implicit exception: dispatches to 0x00007f6d5003149e
+  0.04%        ││  │││  0x00007f6d500312ec: cmp    $0x7,%r11d
+               ││  │││  0x00007f6d500312f0: jbe    0x00007f6d5003149e
+  0.01%        ││  │││  0x00007f6d500312f6: cmp    $0x7ffffff8,%edi
+               ││  │││  0x00007f6d500312fc: jg     0x00007f6d5003147b
+  0.02%        ││  │││  0x00007f6d50031302: vmovq  %r8,%xmm0
+               ││  │││  0x00007f6d50031307: mov    0x70(%rsp),%r14
+  0.02%        ││  │││  0x00007f6d5003130c: mov    $0x8,%r11d
+  0.01%        ││  │││  0x00007f6d50031312: cmp    %r11d,%edi
+               ││  │││  0x00007f6d50031315: mov    %edi,%r10d
+               ││  │││  0x00007f6d50031318: mov    $0x8,%r8d
+  0.05%        ││  │││  0x00007f6d5003131e: cmovg  %r8d,%r10d
+  0.03%        ││  │││  0x00007f6d50031322: lea    (%r12,%rsi,8),%r13
+               ││  │││  0x00007f6d50031326: lea    (%r12,%r9,8),%rax
+               ││  │││  0x00007f6d5003132a: xor    %r9d,%r9d
+  0.03%        ││  │││  0x00007f6d5003132d: xor    %esi,%esi
+  0.01%        ││  │││  0x00007f6d5003132f: xor    %r11d,%r11d
+  0.00%        ││  │││  0x00007f6d50031332: xor    %r8d,%r8d
+               ││ ↗│││  0x00007f6d50031335: cmp    %edx,%r9d
+               ││ ││││  0x00007f6d50031338: jge    0x00007f6d500314c2
+  0.03%        ││ ││││  0x00007f6d5003133e: cmp    %ebx,%r9d
+               ││ ││││  0x00007f6d50031341: jge    0x00007f6d50031502
+  0.03%        ││ ││││  0x00007f6d50031347: mov    %ebx,0x64(%rsp)
+  0.01%        ││ ││││  0x00007f6d5003134b: vmovd  %edx,%xmm3
+               ││ ││││  0x00007f6d5003134f: mov    %edi,0x60(%rsp)
+  0.05%        ││ ││││  0x00007f6d50031353: vmovq  %rbp,%xmm1
+  0.03%        ││ ││││  0x00007f6d50031358: vmovdqu 0x10(%rax,%r9,8),%ymm2
+  0.02%        ││ ││││  0x00007f6d5003135f: vpand  0x10(%r13,%r9,8),%ymm2,%ymm2   ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+               ││ ││││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.06%        ││ ││││  0x00007f6d50031366: vmovdqu %ymm2,0x10(%r12,%rcx,8)       ;*ifnonnull {reexecute=0 rethrow=0 return_oop=0}
+               ││ ││││                                                            ; - java.util.Objects::requireNonNull@1 (line 220)
+               ││ ││││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@1 (line 653)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.03%        ││ ││││  0x00007f6d5003136d: mov    %r9d,%edi
+  0.00%        ││ ││││  0x00007f6d50031370: add    $0x4,%edi                      ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+               ││ ││││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.00%        ││ ││││  0x00007f6d50031373: movslq %edi,%rbx                      ;*getstatic VECTOR_ACCESS_OOB_CHECK {reexecute=0 rethrow=0 return_oop=0}
+               ││ ││││                                                            ; - jdk.incubator.vector.VectorIntrinsics::checkIndex@0 (line 366)
+               ││ ││││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@11 (line 654)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.03%        ││ ││││  0x00007f6d50031376: vmovdqu 0x10(%rax,%rbx,8),%ymm2
+  0.00%        ││ ││││  0x00007f6d5003137c: vpand  0x10(%r13,%rbx,8),%ymm2,%ymm2  ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+               ││ ││││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.10%        ││ ││││  0x00007f6d50031383: vmovdqu %ymm2,0x30(%r12,%rcx,8)       ;*invokestatic requireNonNull {reexecute=0 rethrow=0 return_oop=0}
+               ││ ││││                                                            ; - jdk.incubator.vector.Long256Vector::intoArray@1 (line 653)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+               ││ ││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+  0.02%        ││ ││││  0x00007f6d5003138a: popcnt 0x28(%r12,%rcx,8),%rdi
+  0.03%        ││ ││││  0x00007f6d50031391: popcnt 0x20(%r12,%rcx,8),%rdx
+  0.04%        ││ ││││  0x00007f6d50031398: add    %r8d,%edx
+  0.02%        ││ ││││  0x00007f6d5003139b: popcnt 0x38(%r12,%rcx,8),%r8
+  0.22%        ││ ││││  0x00007f6d500313a2: add    %edx,%r8d
+  0.08%        ││ ││││  0x00007f6d500313a5: popcnt 0x30(%r12,%rcx,8),%rdx
+  0.03%        ││ ││││  0x00007f6d500313ac: popcnt 0x18(%r12,%rcx,8),%rbx
+               ││ ││││  0x00007f6d500313b3: add    %r11d,%ebx
+  0.04%        ││ ││││  0x00007f6d500313b6: add    %edx,%ebx
+  0.15%        ││ ││││  0x00007f6d500313b8: popcnt 0x48(%r12,%rcx,8),%r11
+               ││ ││││  0x00007f6d500313bf: add    %ebx,%r11d
+  0.04%        ││ ││││  0x00007f6d500313c2: popcnt 0x40(%r12,%rcx,8),%rdx
+  0.03%        ││ ││││  0x00007f6d500313c9: popcnt 0x10(%r12,%rcx,8),%rbx
+  0.10%        ││ ││││  0x00007f6d500313d0: add    %esi,%ebx
+  0.06%        ││ ││││  0x00007f6d500313d2: add    %ebx,%edi
+  0.03%        ││ ││││  0x00007f6d500313d4: add    %edx,%edi
+  0.08%        ││ ││││  0x00007f6d500313d6: add    $0x8,%r9d
+  0.00%        ││ ││││  0x00007f6d500313da: cmp    %r10d,%r9d
+               ││╭││││  0x00007f6d500313dd: jge    0x00007f6d500313f2
+               │││││││  0x00007f6d500313df: mov    %edi,%esi
+               │││││││  0x00007f6d500313e1: mov    0x60(%rsp),%edi
+               │││││││  0x00007f6d500313e5: vmovd  %xmm3,%edx
+               │││││││  0x00007f6d500313e9: mov    0x64(%rsp),%ebx
+               │││╰│││  0x00007f6d500313ed: jmpq   0x00007f6d50031335
+               ││↘ │││  0x00007f6d500313f2: vmovd  %xmm3,%edx
+  0.00%        ││  │││  0x00007f6d500313f6: cmp    0x64(%rsp),%edx
+  0.06%        ││  │││  0x00007f6d500313fa: mov    %edx,%r10d
+               ││  │││  0x00007f6d500313fd: mov    0x64(%rsp),%ebx
+               ││  │││  0x00007f6d50031401: cmovg  %ebx,%r10d
+               ││  │││  0x00007f6d50031405: cmp    0x60(%rsp),%r10d
+  0.07%        ││  │││  0x00007f6d5003140a: mov    0x60(%rsp),%esi
+  0.01%        ││  │││  0x00007f6d5003140e: cmovg  %esi,%r10d
+               ││  │││  0x00007f6d50031412: mov    %r10d,%ebp
+  0.00%        ││  │││  0x00007f6d50031415: add    $0xffffffe8,%ebp
+  0.10%        ││  │││  0x00007f6d50031418: cmp    %ebp,%r10d
+  0.16%        ││  │││  0x00007f6d5003141b: mov    $0x80000000,%r10d
+               ││  │││  0x00007f6d50031421: cmovl  %r10d,%ebp
+  0.00%        ││  │││  0x00007f6d50031425: cmp    %ebp,%r9d
+               ││  ╰││  0x00007f6d50031428: jge    0x00007f6d500311af
+  0.07%        ││   ││  0x00007f6d5003142e: lea    (%r12,%rcx,8),%r10
+  0.01%        ││   ╰│  0x00007f6d50031432: jmpq   0x00007f6d50030f45
+               │↘    │  0x00007f6d50031437: xor    %edx,%edx
+               │     ╰  0x00007f6d50031439: jmpq   0x00007f6d50031285
+               │        0x00007f6d5003143e: mov    $0x1,%ebp
+               ↘        0x00007f6d50031443: vzeroupper
+                        0x00007f6d50031446: movabs $0x7f6d66344390,%r10
+                        0x00007f6d50031450: callq  *%r10
+                        0x00007f6d50031453: mov    0x68(%rsp),%r10                ;*invokestatic store {reexecute=0 rethrow=0 return_oop=0}
+                                                                                  ; - jdk.incubator.vector.Long256Vector::intoArray@43 (line 655)
+                                                                                  ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandStorePopcntUnrolled@109 (line 78)
+                                                                                  ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandStorePopcntUnrolled_jmhTest::vpandStorePopcntUnrolled_thrpt_jmhStub@17 (line 158)
+....................................................................................................

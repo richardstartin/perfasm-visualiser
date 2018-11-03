@@ -1,0 +1,15 @@
+....[Hottest Region 1]..............................................................................
+c2, level 4, com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandExtractPopcnt_jmhTest::vpandExtractPopcnt_thrpt_jmhStub, version 637 (818 bytes)
+
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandExtractPopcnt_jmhTest::vpandExtractPopcnt_thrpt_jmhStub@17 (line 158)
+                       0x00007fbfe024bb31: movzbl 0x94(%r9),%r10d                ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandExtractPopcnt@17 (line 94)
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandExtractPopcnt_jmhTest::vpandExtractPopcnt_thrpt_jmhStub@17 (line 158)
+                                                                                 ; implicit exception: dispatches to 0x00007fbfe024c06a
+                       0x00007fbfe024bb39: test   %r10d,%r10d
+                       0x00007fbfe024bb3c: jne    0x00007fbfe024be98
+
+                       0x00007fbfe024be98: mov    $0x1,%ebp                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::vpandExtractPopcnt@17 (line 94)
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_vpandExtractPopcnt_jmhTest::vpandExtractPopcnt_thrpt_jmhStub@17 (line 158)
+....................................................................................................

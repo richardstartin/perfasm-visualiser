@@ -1,0 +1,195 @@
+....[Hottest Region 1]..............................................................................
+c2, level 4, com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub, version 565 (423 bytes)
+
+                       0x00007fe418240c31: movzbl 0x94(%r8),%r11d                ;*getfield isDone {reexecute=0 rethrow=0 return_oop=0}
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@30 (line 160)
+                                                                                 ; implicit exception: dispatches to 0x00007fe418240f8e
+                       0x00007fe418240c39: test   %r11d,%r11d
+         ╭             0x00007fe418240c3c: jne    0x00007fe418240e09             ;*ifeq {reexecute=0 rethrow=0 return_oop=0}
+         │                                                                       ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@33 (line 160)
+         │             0x00007fe418240c42: mov    $0x1,%ebp
+         │╭            0x00007fe418240c47: jmpq   0x00007fe418240d34
+         ││ ↗          0x00007fe418240c4c: vmovq  %xmm0,%r9
+         ││ │          0x00007fe418240c51: vmovq  %xmm1,%r8
+  0.00%  ││ │      ↗   0x00007fe418240c56: vmovq  %r9,%xmm0
+  0.04%  ││ │      │   0x00007fe418240c5b: vmovq  %r8,%xmm1                      ;*iload_2 {reexecute=0 rethrow=0 return_oop=0}
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@12 (line 35)
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  1.71%  ││↗│      │   0x00007fe418240c60: movslq %ecx,%r9
+  1.42%  ││││      │   0x00007fe418240c63: mov    0x10(%rbx,%rcx,8),%r10
+  8.98%  ││││      │   0x00007fe418240c68: and    0x10(%rdi,%rcx,8),%r10
+  3.51%  ││││      │   0x00007fe418240c6d: popcnt %r10,%r8
+  3.21%  ││││      │   0x00007fe418240c72: add    %r8d,%edx
+  2.48%  ││││      │   0x00007fe418240c75: mov    0x28(%rbx,%r9,8),%r10
+  8.19%  ││││      │   0x00007fe418240c7a: and    0x28(%rdi,%r9,8),%r10
+  3.59%  ││││      │   0x00007fe418240c7f: popcnt %r10,%r10
+  3.73%  ││││      │   0x00007fe418240c84: mov    0x20(%rbx,%r9,8),%r8
+  2.16%  ││││      │   0x00007fe418240c89: and    0x20(%rdi,%r9,8),%r8
+  7.53%  ││││      │   0x00007fe418240c8e: popcnt %r8,%rsi
+  6.21%  ││││      │   0x00007fe418240c93: mov    0x18(%rbx,%r9,8),%r8           ;*laload {reexecute=0 rethrow=0 return_oop=0}
+         ││││      │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@42 (line 36)
+         ││││      │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  2.30%  ││││      │   0x00007fe418240c98: and    0x18(%rdi,%r9,8),%r8
+  2.07%  ││││      │   0x00007fe418240c9d: popcnt %r8,%r9
+ 12.75%  ││││      │   0x00007fe418240ca2: add    %r9d,%edx
+  6.01%  ││││      │   0x00007fe418240ca5: add    %esi,%edx
+  5.70%  ││││      │   0x00007fe418240ca7: add    %r10d,%edx                     ;*iadd {reexecute=0 rethrow=0 return_oop=0}
+         ││││      │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@47 (line 36)
+         ││││      │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  8.60%  ││││      │   0x00007fe418240caa: add    $0x4,%ecx                      ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+         ││││      │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@49 (line 35)
+         ││││      │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  3.58%  ││││      │   0x00007fe418240cad: cmp    %r11d,%ecx
+         ││╰│      │   0x00007fe418240cb0: jl     0x00007fe418240c60             ;*goto {reexecute=0 rethrow=0 return_oop=0}
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@52 (line 35)
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.04%  ││ │      │   0x00007fe418240cb2: mov    0x108(%r15),%r10               ; ImmutableOopMap{rbx=Oop rdi=Oop xmm0=Oop xmm1=Oop [96]=Oop [16]=Oop }
+         ││ │      │                                                             ;*goto {reexecute=1 rethrow=0 return_oop=0}
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@52 (line 35)
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.05%  ││ │      │   0x00007fe418240cb9: test   %eax,(%r10)                    ;*goto {reexecute=0 rethrow=0 return_oop=0}
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@52 (line 35)
+         ││ │      │                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         ││ │      │                                                             ;   {poll}
+  0.29%  ││ │      │   0x00007fe418240cbc: cmp    %r11d,%ecx
+         ││ ╰      │   0x00007fe418240cbf: jl     0x00007fe418240c4c
+         ││        │   0x00007fe418240cc1: vmovq  %xmm0,%r9
+         ││        │   0x00007fe418240cc6: vmovq  %xmm1,%r8
+  0.00%  ││       ↗│   0x00007fe418240ccb: cmp    %r14d,%ecx
+         ││  ╭    ││   0x00007fe418240cce: jge    0x00007fe418240cfa             ;*iload_2 {reexecute=0 rethrow=0 return_oop=0}
+         ││  │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@12 (line 35)
+         ││  │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.08%  ││  │↗   ││   0x00007fe418240cd0: cmp    %r13d,%ecx
+         ││  ││   ││   0x00007fe418240cd3: jge    0x00007fe418240e78             ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@18 (line 35)
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.00%  ││  ││   ││   0x00007fe418240cd9: cmp    %eax,%ecx
+         ││  ││   ││   0x00007fe418240cdb: jge    0x00007fe418240ea4             ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@27 (line 35)
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.20%  ││  ││   ││   0x00007fe418240ce1: mov    0x10(%rbx,%rcx,8),%r10         ;*laload {reexecute=0 rethrow=0 return_oop=0}
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@42 (line 36)
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.01%  ││  ││   ││   0x00007fe418240ce6: and    0x10(%rdi,%rcx,8),%r10
+  0.06%  ││  ││   ││   0x00007fe418240ceb: popcnt %r10,%r11
+  0.02%  ││  ││   ││   0x00007fe418240cf0: add    %r11d,%edx                     ;*iadd {reexecute=0 rethrow=0 return_oop=0}
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@47 (line 36)
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.19%  ││  ││   ││   0x00007fe418240cf3: inc    %ecx                           ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@49 (line 35)
+         ││  ││   ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         ││  ││   ││   0x00007fe418240cf5: cmp    %r14d,%ecx
+         ││  │╰   ││   0x00007fe418240cf8: jl     0x00007fe418240cd0             ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         ││  │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@9 (line 35)
+         ││  │    ││                                                             ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.00%  ││  ↘    ││↗  0x00007fe418240cfa: mov    %r8,0x58(%rsp)
+         ││       │││  0x00007fe418240cff: mov    %r9,0x50(%rsp)
+  0.04%  ││       │││  0x00007fe418240d04: mov    0x10(%rsp),%rsi
+         ││       │││  0x00007fe418240d09: xchg   %ax,%ax
+         ││       │││  0x00007fe418240d0b: callq  0x00007fe410765f00             ; ImmutableOopMap{[80]=Oop [88]=Oop [96]=Oop [16]=Oop }
+         ││       │││                                                            ;*invokevirtual consume {reexecute=0 rethrow=0 return_oop=0}
+         ││       │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@20 (line 158)
+         ││       │││                                                            ;   {optimized virtual_call}
+  0.46%  ││       │││  0x00007fe418240d10: mov    0x58(%rsp),%r8
+         ││       │││  0x00007fe418240d15: movzbl 0x94(%r8),%r11d                ;*goto {reexecute=0 rethrow=0 return_oop=0}
+         ││       │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@52 (line 35)
+         ││       │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.01%  ││       │││  0x00007fe418240d1d: mov    0x108(%r15),%r10
+  0.06%  ││       │││  0x00007fe418240d24: add    $0x1,%rbp                      ; ImmutableOopMap{r8=Oop [80]=Oop [96]=Oop [16]=Oop }
+         ││       │││                                                            ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+         ││       │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@33 (line 160)
+         ││       │││  0x00007fe418240d28: test   %eax,(%r10)                    ;   {poll}
+         ││       │││  0x00007fe418240d2b: test   %r11d,%r11d
+         ││    ╭  │││  0x00007fe418240d2e: jne    0x00007fe418240e0e             ;*aload_1 {reexecute=0 rethrow=0 return_oop=0}
+         ││    │  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@36 (line 161)
+         │↘    │  │││  0x00007fe418240d34: mov    0x50(%rsp),%r9
+  0.06%  │     │  │││  0x00007fe418240d39: mov    0xc(%r9),%r14d                 ;*getfield size {reexecute=0 rethrow=0 return_oop=0}
+         │     │  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@6 (line 35)
+         │     │  │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.00%  │     │  │││  0x00007fe418240d3d: test   %r14d,%r14d
+  0.00%  │     │╭ │││  0x00007fe418240d40: jle    0x00007fe418240e02             ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@9 (line 35)
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.02%  │     ││ │││  0x00007fe418240d46: mov    0x10(%r9),%r10d                ;*getfield left {reexecute=0 rethrow=0 return_oop=0}
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@14 (line 35)
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.03%  │     ││ │││  0x00007fe418240d4a: mov    0xc(%r12,%r10,8),%r13d         ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@17 (line 35)
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         │     ││ │││                                                            ; implicit exception: dispatches to 0x00007fe418240e40
+  0.07%  │     ││ │││  0x00007fe418240d4f: mov    0x14(%r9),%ebx                 ;*getfield right {reexecute=0 rethrow=0 return_oop=0}
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@23 (line 35)
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         │     ││ │││  0x00007fe418240d53: mov    0xc(%r12,%rbx,8),%eax          ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@26 (line 35)
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         │     ││ │││                                                            ; implicit exception: dispatches to 0x00007fe418240e40
+  0.00%  │     ││ │││  0x00007fe418240d58: test   %r13d,%r13d
+         │     ││ │││  0x00007fe418240d5b: jbe    0x00007fe418240e40
+  0.04%  │     ││ │││  0x00007fe418240d61: movslq %r13d,%r11
+  0.01%  │     ││ │││  0x00007fe418240d64: movslq %r14d,%rcx
+         │     ││ │││  0x00007fe418240d67: dec    %rcx
+  0.01%  │     ││ │││  0x00007fe418240d6a: cmp    %r11,%rcx
+         │     ││ │││  0x00007fe418240d6d: jae    0x00007fe418240e40
+  0.06%  │     ││ │││  0x00007fe418240d73: test   %eax,%eax
+         │     ││ │││  0x00007fe418240d75: jbe    0x00007fe418240e40
+  0.00%  │     ││ │││  0x00007fe418240d7b: movslq %eax,%r11
+         │     ││ │││  0x00007fe418240d7e: cmp    %r11,%rcx
+         │     ││ │││  0x00007fe418240d81: jae    0x00007fe418240e40
+         │     ││ │││  0x00007fe418240d87: mov    $0x1,%ecx
+  0.05%  │     ││ │││  0x00007fe418240d8c: cmp    %r14d,%ecx
+  0.00%  │     ││ │││  0x00007fe418240d8f: mov    $0x1,%r11d
+         │     ││ │││  0x00007fe418240d95: cmovg  %r14d,%r11d
+  0.01%  │     ││ │││  0x00007fe418240d99: shl    $0x3,%rbx
+  0.05%  │     ││ │││  0x00007fe418240d9d: lea    (%r12,%r10,8),%rdi
+         │     ││ │││  0x00007fe418240da1: xor    %ecx,%ecx
+         │     ││ │││  0x00007fe418240da3: xor    %edx,%edx                      ;*iload_2 {reexecute=0 rethrow=0 return_oop=0}
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@12 (line 35)
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.01%  │     ││↗│││  0x00007fe418240da5: cmp    %r13d,%ecx
+         │     ││││││  0x00007fe418240da8: jge    0x00007fe418240e72             ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@18 (line 35)
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.07%  │     ││││││  0x00007fe418240dae: cmp    %eax,%ecx
+         │     ││││││  0x00007fe418240db0: jge    0x00007fe418240e9e             ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@27 (line 35)
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.00%  │     ││││││  0x00007fe418240db6: mov    0x10(%rbx,%rcx,8),%r10         ;*laload {reexecute=0 rethrow=0 return_oop=0}
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@42 (line 36)
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         │     ││││││  0x00007fe418240dbb: and    0x10(%rdi,%rcx,8),%r10
+  0.00%  │     ││││││  0x00007fe418240dc0: popcnt %r10,%r10
+  0.02%  │     ││││││  0x00007fe418240dc5: add    %r10d,%edx                     ;*iadd {reexecute=0 rethrow=0 return_oop=0}
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@47 (line 36)
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+  0.01%  │     ││││││  0x00007fe418240dc8: inc    %ecx                           ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@49 (line 35)
+         │     ││││││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         │     ││││││  0x00007fe418240dca: cmp    %r11d,%ecx
+         │     ││╰│││  0x00007fe418240dcd: jl     0x00007fe418240da5             ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.IntersectionCardinality::popcnt@9 (line 35)
+         │     ││ │││                                                            ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@17 (line 158)
+         │     ││ │││  0x00007fe418240dcf: cmp    %eax,%r13d
+  0.05%  │     ││ │││  0x00007fe418240dd2: mov    %r13d,%r10d
+  0.01%  │     ││ │││  0x00007fe418240dd5: cmovg  %eax,%r10d
+         │     ││ │││  0x00007fe418240dd9: cmp    %r14d,%r10d
+         │     ││ │││  0x00007fe418240ddc: cmovg  %r14d,%r10d
+  0.04%  │     ││ │││  0x00007fe418240de0: mov    %r10d,%r11d
+  0.02%  │     ││ │││  0x00007fe418240de3: add    $0xfffffffd,%r11d
+         │     ││ │││  0x00007fe418240de7: cmp    %r11d,%r10d
+  0.01%  │     ││ │││  0x00007fe418240dea: mov    $0x80000000,%r10d
+  0.03%  │     ││ │││  0x00007fe418240df0: cmovl  %r10d,%r11d
+  0.01%  │     ││ │││  0x00007fe418240df4: cmp    %r11d,%ecx
+         │     ││ ╰││  0x00007fe418240df7: jge    0x00007fe418240ccb
+  0.01%  │     ││  ╰│  0x00007fe418240dfd: jmpq   0x00007fe418240c56
+         │     │↘   │  0x00007fe418240e02: xor    %edx,%edx
+         │     │    ╰  0x00007fe418240e04: jmpq   0x00007fe418240cfa
+         ↘     │       0x00007fe418240e09: mov    $0x1,%ebp                      ;*aload_1 {reexecute=0 rethrow=0 return_oop=0}
+               │                                                                 ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@36 (line 161)
+               ↘       0x00007fe418240e0e: movabs $0x7fe42e776390,%r10
+                       0x00007fe418240e18: callq  *%r10                          ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@37 (line 161)
+                       0x00007fe418240e1b: mov    0x60(%rsp),%r10
+                       0x00007fe418240e20: mov    %rbp,0x18(%r10)                ;*putfield measuredOps {reexecute=0 rethrow=0 return_oop=0}
+                                                                                 ; - com.openkappa.panama.vectorbenchmarks.generated.IntersectionCardinality_popcnt_jmhTest::popcnt_thrpt_jmhStub@52 (line 163)
+....................................................................................................
