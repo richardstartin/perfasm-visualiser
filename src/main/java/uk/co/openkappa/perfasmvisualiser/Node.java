@@ -92,6 +92,10 @@ public class Node {
         int end = token.indexOf(')');
         List<Operand> operands = Arrays.stream(token.substring(start, end).split(","))
                 .map(t -> parse(instruction, t)).collect(toList());
+        if (operands.size() == 1) {
+          Operand operand = operands.get(0);
+          return new MemoryAddressOperand(operand.getMaxWidth(), operand.getMaxWidth(), token, operands);
+        }
         return new MemoryAddressOperand(Math.max(width, 4), width, token, operands);
       }
       if (DECIMAL.matcher(token).matches()) {
@@ -141,8 +145,6 @@ public class Node {
 
   private static int instructionDefinedWidth(String instruction) {
     switch (instruction) {
-      case "mov":
-        return 4;
       case "movzbl":
         return 1;
       case "movq":

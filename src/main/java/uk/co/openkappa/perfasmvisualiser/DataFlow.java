@@ -52,13 +52,13 @@ public class DataFlow {
       }
     }
     int newWidth = Math.min(node.getOutput().getMaxWidth(), width);
-    Operand ouput = node.getOutput();
+    Operand output = node.getOutput();
     List<Operand> dependencies = node.getDependencies()
             .stream()
-            .map(op -> op.hasUnknownWidth() ? op.adjustWidth(ouput.maxWidth, ouput.maxWidth) : op)
+            .map(op -> op.hasUnknownWidth() ? op.adjustWidth(output.maxWidth, output.usedWidth) : op)
             .collect(Collectors.toList());
     boolean modifyOutput = node.getDependencies().stream().allMatch(Operand::propagateWidth);
-    accumulation.put(label, modifyOutput(node, dependencies, modifyOutput ? ouput.adjustWidth(newWidth) : ouput));
+    accumulation.put(label, modifyOutput(node, dependencies, modifyOutput ? output.adjustWidth(newWidth) : output));
   }
 
   public String toJson() {
