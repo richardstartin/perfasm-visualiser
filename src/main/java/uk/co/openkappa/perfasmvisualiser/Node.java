@@ -135,12 +135,10 @@ public class Node {
   }
 
   private static int instructionDefinedWidth(String instruction) {
+    if (instruction.startsWith("vmov")) {
+      return 64;
+    }
     switch (instruction) {
-      case "vmovdqu":
-      case "vmovdq":
-        return 32;
-      case "vmovd":
-        return 16;
       case "mov":
         return 4;
       case "movzbl":
