@@ -111,18 +111,18 @@ public class Node {
       String registerName = token.startsWith("%") ? token.substring(1) : token;
       if (registerName.startsWith("r")) {
         if (registerName.endsWith("d")) {
-          return new QWordOperand(token, registerName.substring(0, registerName.length() - 1), Math.min(instructionDefinedWidth(instruction), 4));
+          return new QWordOperand(token, registerName.substring(1, registerName.length() - 1), Math.min(instructionDefinedWidth(instruction), 4));
         }
         if (registerName.endsWith("w")) {
-          return new QWordOperand(token, registerName.substring(0, registerName.length() - 1), Math.min(instructionDefinedWidth(instruction), 2));
+          return new QWordOperand(token, registerName.substring(1, registerName.length() - 1), Math.min(instructionDefinedWidth(instruction), 2));
         }
         if (registerName.endsWith("b")) {
-          return new QWordOperand(token, registerName.substring(0, registerName.length() - 1), 1);
+          return new QWordOperand(token, registerName.substring(1, registerName.length() - 1), 1);
         }
-        return new QWordOperand(token, registerName, Math.min(instructionDefinedWidth(instruction), 8));
+        return new QWordOperand(token, registerName.substring(1), Math.min(instructionDefinedWidth(instruction), 8));
       }
       if (registerName.startsWith("e")) {
-        return new DWordOperand(token, registerName, 4);
+        return new DWordOperand(token, registerName.substring(1), 4);
       }
       if (registerName.length() == 2 && registerName.charAt(1) == 'x') {
         return new WordOperand(token, registerName, 2);
