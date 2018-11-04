@@ -48,12 +48,12 @@ The following output will be derived from the perfasm output below:
         0x00007fbfe024bb65: vmovdqu [0x70(%rax,%r10,8)[32/32]] -> %ymm2[32/32] (0.43)
 
 5.45
-0x00007fbfe024bc60: add [%eax[4/4]] -> r14d[4/8] (0.55)
-  0x00007fbfe024bc5d: add [r9d[4/8]] -> %eax[4/4] (4.9)
+0x00007fbfe024bc60: add [eax[4/4]] -> r14d[4/8] (0.55)
+  0x00007fbfe024bc5d: add [r9d[4/8]] -> eax[4/4] (4.9)
 
 4.96
-0x00007fbfe024bd6c: test [%eax[4/4]] -> %r10[4/8] (0.06)
-  0x00007fbfe024bc5d: add [r9d[4/8]] -> %eax[4/4] (4.9)
+0x00007fbfe024bd6c: test [eax[4/4]] -> %r10[4/8] (0.06)
+  0x00007fbfe024bc5d: add [r9d[4/8]] -> eax[4/4] (4.9)
 
 4.68
 0x00007fbfe024bc56: popcnt [rdi[8/8]] -> rsi[8/8] (0.42)
@@ -70,48 +70,48 @@ The following output will be derived from the perfasm output below:
         0x00007fbfe024bb73: vmovdqu [0x30(%rax,%r10,8)[32/32]] -> %ymm2[32/32] (0.84)
 
 4.53
-0x00007fbfe024bc9a: add [0x10[4/4]] -> %ecx[4/4] (4.53)
+0x00007fbfe024bc9a: add [0x4[4/4]] -> ecx[4/4] (4.53)
 
 4.13
-0x00007fbfe024bc8e: add [r14d[4/8]] -> %edx[4/4] (0.45)
-  0x00007fbfe024bc8b: add [%ebx[4/4]] -> r14d[4/8] (3.68)
+0x00007fbfe024bc8e: add [r14d[4/8]] -> edx[4/4] (0.45)
+  0x00007fbfe024bc8b: add [ebx[4/4]] -> r14d[4/8] (3.68)
 
 4.01
 0x00007fbfe024bba5: popcnt [r10[8/8]] -> rax[8/8] (0.15)
-  0x00007fbfe024bba0: vmovq [%xmm10[16/16]] -> r10[8/8] (3.86)
+  0x00007fbfe024bba0: vmovq [%xmm10[8/16]] -> r10[8/8] (3.86)
 
 3.7800000000000002
 0x00007fbfe024bbe6: popcnt [r11[8/8]] -> r11[8/8] (2.44)
-  0x00007fbfe024bbe0: vpextrq [0x1[4/4], %xmm9[16/16]] -> r11[8/8] (1.34)
+  0x00007fbfe024bbe0: vpextrq [0x4[4/4], %xmm9[8/16]] -> r11[8/8] (1.34)
 
 3.73
-0x00007fbfe024bd0f: add [%edx[4/4]] -> %edi[4/4] (0.02)
-  0x00007fbfe024bc97: add [r8d[4/8]] -> %edx[4/4] (3.71)
+0x00007fbfe024bd0f: add [edx[4/4]] -> edi[4/4] (0.02)
+  0x00007fbfe024bc97: add [r8d[4/8]] -> edx[4/4] (3.71)
 
 3.4400000000000004
 0x00007fbfe024bc1e: popcnt [rdi[8/8]] -> rdi[8/8] (0.8)
-  0x00007fbfe024bc18: vpextrq [0x1[4/4], %xmm8[16/16]] -> rdi[8/8] (2.64)
+  0x00007fbfe024bc18: vpextrq [0x4[4/4], %xmm8[8/16]] -> rdi[8/8] (2.64)
 
 3.42
-0x00007fbfe024bc25: add [%esi[4/4]] -> %ebp[4/4] (3.42)
+0x00007fbfe024bc25: add [esi[4/4]] -> ebp[4/4] (3.42)
 
 3.2
 0x00007fbfe024bc34: popcnt [r9[8/8]] -> rbx[8/8] (0.35)
-  0x00007fbfe024bc2e: vpextrq [0x1[4/4], %xmm11[16/16]] -> r9[8/8] (2.85)
+  0x00007fbfe024bc2e: vpextrq [0x4[4/4], %xmm11[8/16]] -> r9[8/8] (2.85)
 
 3.02
 0x00007fbfe024bbb9: popcnt [r10[8/8]] -> rdx[8/8] (0.18)
-  0x00007fbfe024bbb4: vmovq [%xmm9[16/16]] -> r10[8/8] (2.84)
+  0x00007fbfe024bbb4: vmovq [%xmm9[8/16]] -> r10[8/8] (2.84)
 
 2.61
 0x00007fbfe024bb99: popcnt [r10[8/8]] -> rbp[8/8] (0.01)
-  0x00007fbfe024bb94: vmovq [%xmm8[16/16]] -> r10[8/8] (2.6)
+  0x00007fbfe024bb94: vmovq [%xmm8[8/16]] -> r10[8/8] (2.6)
 
 1.69
-0x00007fbfe024bc91: add [r11d[4/8]] -> %edx[4/4] (1.69)
+0x00007fbfe024bc91: add [r11d[4/8]] -> edx[4/4] (1.69)
 
 1.34
-0x00007fbfe024bc94: add [r10d[1/8]] -> %edx[1/4] (1.34)
+0x00007fbfe024bc94: add [r10d[1/8]] -> edx[1/4] (1.34)
   0x00007fbfe024bb39: test [r10d[1/8]] -> r10d[1/8] (0.0)
     0x00007fbfe024bb31: movzbl [0x94(%r9)[1/4]] -> r10d[1/8] (0.0)
 
@@ -120,27 +120,27 @@ The following output will be derived from the perfasm output below:
 
 1.18
 0x00007fbfe024bbf1: popcnt [r9[8/8]] -> r9[8/8] (0.97)
-  0x00007fbfe024bbeb: vpextrq [0x1[4/4], %xmm10[16/16]] -> r9[8/8] (0.21)
+  0x00007fbfe024bbeb: vpextrq [0x4[4/4], %xmm10[8/16]] -> r9[8/8] (0.21)
 
 1.08
-0x00007fbfe024bc29: add [%ebp[4/4]] -> %eax[4/4] (0.7)
-  0x00007fbfe024bc27: add [%ebx[4/4]] -> %ebp[4/4] (0.38)
+0x00007fbfe024bc29: add [ebp[4/4]] -> eax[4/4] (0.7)
+  0x00007fbfe024bc27: add [ebx[4/4]] -> ebp[4/4] (0.38)
 
 0.87
-0x00007fbfe024bc63: add [%ebx[4/4]] -> r14d[4/8] (0.87)
+0x00007fbfe024bc63: add [ebx[4/4]] -> r14d[4/8] (0.87)
 
 0.84
-0x00007fbfe024bc2b: add [r9d[4/8]] -> %eax[4/4] (0.84)
+0x00007fbfe024bc2b: add [r9d[4/8]] -> eax[4/4] (0.84)
 
 0.84
 0x00007fbfe024bbaf: popcnt [r10[8/8]] -> r14[8/8] (0.41)
-  0x00007fbfe024bbaa: vmovq [%xmm11[16/16]] -> r10[8/8] (0.43)
+  0x00007fbfe024bbaa: vmovq [%xmm11[8/16]] -> r10[8/8] (0.43)
 
 0.56
-0x00007fbfe024bc5b: add [%esi[4/4]] -> %eax[4/4] (0.56)
+0x00007fbfe024bc5b: add [esi[4/4]] -> eax[4/4] (0.56)
 
 0.51
-0x00007fbfe024bb9e: add [%edx[4/4]] -> %ebp[4/4] (0.51)
+0x00007fbfe024bb9e: add [edx[4/4]] -> ebp[4/4] (0.51)
 
 0.43000000000000005
 0x00007fbfe024bdf8: popcnt [r9[8/8]] -> r9[8/8] (0.23)
@@ -164,20 +164,20 @@ The following output will be derived from the perfasm output below:
         0x00007fbfe024bcd6: vmovdqu [0x10(%rax,%rcx,8)[32/32]] -> %ymm2[32/32] (0.01)
 
 0.35
-0x00007fbfe024bc23: add [%edi[4/4]] -> %ebp[4/4] (0.35)
+0x00007fbfe024bc23: add [edi[4/4]] -> ebp[4/4] (0.35)
 
 0.32
-0x00007fbfe024bb62: movslq [%ecx[4/4]] -> r10[4/8] (0.32)
+0x00007fbfe024bb62: movslq [ecx[4/4]] -> r10[4/8] (0.32)
 
 0.2
-0x00007fbfe024bca1: jl [%ecx[0/4]] -> 0x00007fbfe024bca1 (0.0)
-  0x00007fbfe024bc9d: cmp [0x50(%rsp)[4/4]] -> %ecx[4/4] (0.2)
+0x00007fbfe024bca1: jl [ecx[0/4]] -> 0x00007fbfe024bca1 (0.0)
+  0x00007fbfe024bc9d: cmp [0x50(%rsp)[4/4]] -> ecx[4/4] (0.2)
 
 0.18
 0x00007fbfe024bd17: popcnt [r10[8/8]] -> r10[8/8] (0.06)
   0x00007fbfe024bd11: vpextrq [0x4[4/4], %xmm2[8/16]] -> r10[8/8] (0.08)
     0x00007fbfe024bb88: vmovq [rax[8/8]] -> %xmm2[8/16] (0.03)
-      0x00007fbfe024bb50: vmovq [%xmm2[16/16]] -> rax[8/8] (0.01)
+      0x00007fbfe024bb50: vmovq [%xmm2[8/16]] -> rax[8/8] (0.01)
 
 0.16
 0x00007fbfe024be09: popcnt [rdi[8/8]] -> rdi[8/8] (0.0)
@@ -187,49 +187,49 @@ The following output will be derived from the perfasm output below:
         0x00007fbfe024bddf: vmovdqu [0x10(%rax,%rcx,8)[32/32]] -> %ymm2[32/32] (0.0)
 
 0.15000000000000002
-0x00007fbfe024be29: add [%edi[4/4]] -> %edx[4/4] (0.01)
-  0x00007fbfe024bd22: add [%esi[4/4]] -> %edi[4/4] (0.14)
+0x00007fbfe024be29: add [edi[4/4]] -> edx[4/4] (0.01)
+  0x00007fbfe024bd22: add [esi[4/4]] -> edi[4/4] (0.14)
 
 0.15000000000000002
 0x00007fbfe024be21: popcnt [r10[8/8]] -> r10[8/8] (0.1)
   0x00007fbfe024be1b: vpextrq [0x4[4/4], %xmm2[8/16]] -> r10[8/8] (0.01)
     0x00007fbfe024bb88: vmovq [rax[8/8]] -> %xmm2[8/16] (0.03)
-      0x00007fbfe024bb50: vmovq [%xmm2[16/16]] -> rax[8/8] (0.01)
+      0x00007fbfe024bb50: vmovq [%xmm2[8/16]] -> rax[8/8] (0.01)
 
 0.14
-0x00007fbfe024bd2f: mov [%edi[4/4]] -> %edx[4/4] (0.0)
-  0x00007fbfe024bd22: add [%esi[4/4]] -> %edi[4/4] (0.14)
+0x00007fbfe024bd2f: mov [edi[4/4]] -> edx[4/4] (0.0)
+  0x00007fbfe024bd22: add [esi[4/4]] -> edi[4/4] (0.14)
 
 0.14
-0x00007fbfe024bd2b: mov [%edi[4/4]] -> %edx[4/4] (0.0)
-  0x00007fbfe024bd22: add [%esi[4/4]] -> %edi[4/4] (0.14)
+0x00007fbfe024bd2b: mov [edi[4/4]] -> edx[4/4] (0.0)
+  0x00007fbfe024bd22: add [esi[4/4]] -> edi[4/4] (0.14)
 
 0.11
-0x00007fbfe024be93: jmpq [%edx[0/4]] -> 0x00007fbfe024be93 (0.0)
-  0x00007fbfe024be91: xor [%edx[4/4]] -> %edx[4/4] (0.0)
-    0x00007fbfe024be2b: add [r9d[4/8]] -> %edx[4/4] (0.11)
+0x00007fbfe024be93: jmpq [edx[0/4]] -> 0x00007fbfe024be93 (0.0)
+  0x00007fbfe024be91: xor [edx[4/4]] -> edx[4/4] (0.0)
+    0x00007fbfe024be2b: add [r9d[4/8]] -> edx[4/4] (0.11)
 
 0.11
-0x00007fbfe024be35: mov [%edx[4/4]] -> r10d[4/8] (0.0)
-  0x00007fbfe024be2b: add [r9d[4/8]] -> %edx[4/4] (0.11)
+0x00007fbfe024be35: mov [edx[4/4]] -> r10d[4/8] (0.0)
+  0x00007fbfe024be2b: add [r9d[4/8]] -> edx[4/4] (0.11)
 
 0.11
-0x00007fbfe024bd24: add [0x4[4/4]] -> %ecx[4/4] (0.11)
+0x00007fbfe024bd24: add [0x4[4/4]] -> ecx[4/4] (0.11)
 
 0.1
-0x00007fbfe024bd1f: add [r9d[4/8]] -> %edi[4/4] (0.1)
+0x00007fbfe024bd1f: add [r9d[4/8]] -> edi[4/4] (0.1)
 
 0.1
 0x00007fbfe024bd0a: popcnt [r10[8/8]] -> rdi[8/8] (0.0)
   0x00007fbfe024bd05: vmovq [%xmm2[8/16]] -> r10[8/8] (0.06)
     0x00007fbfe024bb88: vmovq [rax[8/8]] -> %xmm2[8/16] (0.03)
-      0x00007fbfe024bb50: vmovq [%xmm2[16/16]] -> rax[8/8] (0.01)
+      0x00007fbfe024bb50: vmovq [%xmm2[8/16]] -> rax[8/8] (0.01)
 
 0.08
-0x00007fbfe024be2e: add [0x4[4/4]] -> %ecx[4/4] (0.08)
+0x00007fbfe024be2e: add [0x4[4/4]] -> ecx[4/4] (0.08)
 
 0.08
-0x00007fbfe024bd1c: add [r10d[1/8]] -> %edi[1/4] (0.08)
+0x00007fbfe024bd1c: add [r10d[1/8]] -> edi[1/4] (0.08)
   0x00007fbfe024bb39: test [r10d[1/8]] -> r10d[1/8] (0.0)
     0x00007fbfe024bb31: movzbl [0x94(%r9)[1/4]] -> r10d[1/8] (0.0)
 
@@ -237,46 +237,46 @@ The following output will be derived from the perfasm output below:
 0x00007fbfe024be13: popcnt [rdx[8/8]] -> rdx[8/8] (0.0)
   0x00007fbfe024be0e: vmovq [%xmm2[8/16]] -> rdx[8/8] (0.03)
     0x00007fbfe024bb88: vmovq [rax[8/8]] -> %xmm2[8/16] (0.03)
-      0x00007fbfe024bb50: vmovq [%xmm2[16/16]] -> rax[8/8] (0.01)
+      0x00007fbfe024bb50: vmovq [%xmm2[8/16]] -> rax[8/8] (0.01)
 
 0.07
 0x00007fbfe024bd42: mov [rdi[4/8]] -> 0x60(%rsp)[4/4] (0.0)
-  0x00007fbfe024bd33: vmovq [%xmm0[16/16]] -> rdi[8/8] (0.07)
+  0x00007fbfe024bd33: vmovq [%xmm0[8/16]] -> rdi[8/8] (0.07)
 
 0.07
-0x00007fbfe024bcc7: jge [%ecx[0/4]] -> 0x00007fbfe024bcc7 (0.0)
-  0x00007fbfe024bcc4: cmp [r11d[4/8]] -> %ecx[4/4] (0.04)
-    0x00007fbfe024bcb0: vmovd [%xmm4[16/16]] -> r11d[8/8] (0.03)
+0x00007fbfe024bcc7: jge [ecx[0/4]] -> 0x00007fbfe024bcc7 (0.0)
+  0x00007fbfe024bcc4: cmp [r11d[4/8]] -> ecx[4/4] (0.04)
+    0x00007fbfe024bcb0: vmovd [%xmm4[8/16]] -> r11d[8/8] (0.03)
 
 0.06999999999999999
 0x00007fbfe024be82: vmovd [r8d[4/8]] -> %xmm7[4/16] (0.06)
-  0x00007fbfe024be47: cmp [%ebx[4/4]] -> r8d[4/8] (0.0)
-    0x00007fbfe024bdaa: cmp [%edx[4/4]] -> %ebx[4/4] (0.0)
-      0x00007fbfe024bda5: mov [0x4[4/4]] -> %edx[4/4] (0.01)
+  0x00007fbfe024be47: cmp [ebx[4/4]] -> r8d[4/8] (0.0)
+    0x00007fbfe024bdaa: cmp [edx[4/4]] -> ebx[4/4] (0.0)
+      0x00007fbfe024bda5: mov [0x4[4/4]] -> edx[4/4] (0.01)
 
 0.06999999999999999
-0x00007fbfe024be4d: cmovg [%ebx[4/4]] -> r10d[4/8] (0.06)
-  0x00007fbfe024bdaa: cmp [%edx[4/4]] -> %ebx[4/4] (0.0)
-    0x00007fbfe024bda5: mov [0x4[4/4]] -> %edx[4/4] (0.01)
+0x00007fbfe024be4d: cmovg [ebx[4/4]] -> r10d[4/8] (0.06)
+  0x00007fbfe024bdaa: cmp [edx[4/4]] -> ebx[4/4] (0.0)
+    0x00007fbfe024bda5: mov [0x4[4/4]] -> edx[4/4] (0.01)
 
 0.05
-0x00007fbfe024bdcf: jge [%ecx[0/4]] -> 0x00007fbfe024bdcf (0.0)
-  0x00007fbfe024bdcc: cmp [r8d[4/8]] -> %ecx[4/4] (0.03)
+0x00007fbfe024bdcf: jge [ecx[0/4]] -> 0x00007fbfe024bdcf (0.0)
+  0x00007fbfe024bdcc: cmp [r8d[4/8]] -> ecx[4/4] (0.03)
     0x00007fbfe024bd94: mov [0xc(%r12,%rax,8)[4/4]] -> r8d[4/8] (0.02)
 
 0.05
-0x00007fbfe024bcc1: jge [%ecx[0/4]] -> 0x00007fbfe024bcc1 (0.0)
-  0x00007fbfe024bcbf: cmp [%ebx[4/4]] -> %ecx[4/4] (0.02)
-    0x00007fbfe024bcac: vmovd [%xmm5[16/16]] -> %ebx[4/4] (0.03)
+0x00007fbfe024bcc1: jge [ecx[0/4]] -> 0x00007fbfe024bcc1 (0.0)
+  0x00007fbfe024bcbf: cmp [ebx[4/4]] -> ecx[4/4] (0.02)
+    0x00007fbfe024bcac: vmovd [%xmm5[4/16]] -> ebx[4/4] (0.03)
 
 0.04
-0x00007fbfe024be6e: jge [%ecx[0/4]] -> 0x00007fbfe024be6e (0.0)
-  0x00007fbfe024be6b: cmp [r9d[4/8]] -> %ecx[4/4] (0.04)
-    0x00007fbfe024be67: cmovl [%edi[4/4]] -> r9d[4/8] (0.0)
-      0x00007fbfe024be62: mov [0x80000000[4/4]] -> %edi[4/4] (0.0)
+0x00007fbfe024be6e: jge [ecx[0/4]] -> 0x00007fbfe024be6e (0.0)
+  0x00007fbfe024be6b: cmp [r9d[4/8]] -> ecx[4/4] (0.04)
+    0x00007fbfe024be67: cmovl [edi[4/4]] -> r9d[4/8] (0.0)
+      0x00007fbfe024be62: mov [0x4[4/4]] -> edi[4/4] (0.0)
 
 0.04
-0x00007fbfe024bd91: mov [0x14(%rdi)[4/4]] -> %eax[4/4] (0.04)
+0x00007fbfe024bd91: mov [0x14(%rdi)[4/4]] -> eax[4/4] (0.04)
 
 0.04
 0x00007fbfe024bd72: jne [r11d[0/8]] -> 0x00007fbfe024bd72 (0.0)
@@ -287,29 +287,29 @@ The following output will be derived from the perfasm output below:
 0x00007fbfe024bd4f: callq [] -> 0x00007fbfe024bd4f (0.04)
 
 0.04
-0x00007fbfe024bd29: jl [%ecx[0/4]] -> 0x00007fbfe024bd29 (0.0)
-  0x00007fbfe024bd27: cmp [%ebx[4/4]] -> %ecx[4/4] (0.01)
-    0x00007fbfe024bcac: vmovd [%xmm5[16/16]] -> %ebx[4/4] (0.03)
+0x00007fbfe024bd29: jl [ecx[0/4]] -> 0x00007fbfe024bd29 (0.0)
+  0x00007fbfe024bd27: cmp [ebx[4/4]] -> ecx[4/4] (0.01)
+    0x00007fbfe024bcac: vmovd [%xmm5[4/16]] -> ebx[4/4] (0.03)
 
 0.04
 0x00007fbfe024bcba: vmovq [%xmm2[8/16]] -> rax[8/8] (0.0)
   0x00007fbfe024bb88: vmovq [rax[8/8]] -> %xmm2[8/16] (0.03)
-    0x00007fbfe024bb50: vmovq [%xmm2[16/16]] -> rax[8/8] (0.01)
+    0x00007fbfe024bb50: vmovq [%xmm2[8/16]] -> rax[8/8] (0.01)
 
 0.03
 0x00007fbfe024be5f: cmp [r9d[4/8]] -> r10d[4/8] (0.0)
-  0x00007fbfe024be5b: add [0xfffffff4[4/4]] -> r9d[4/8] (0.03)
+  0x00007fbfe024be5b: add [0x4[4/4]] -> r9d[4/8] (0.03)
 
 0.03
-0x00007fbfe024bdac: mov [%ebx[4/4]] -> %esi[4/4] (0.02)
-  0x00007fbfe024bdaa: cmp [%edx[4/4]] -> %ebx[4/4] (0.0)
-    0x00007fbfe024bda5: mov [0x4[4/4]] -> %edx[4/4] (0.01)
+0x00007fbfe024bdac: mov [ebx[4/4]] -> esi[4/4] (0.02)
+  0x00007fbfe024bdaa: cmp [edx[4/4]] -> ebx[4/4] (0.0)
+    0x00007fbfe024bda5: mov [0x4[4/4]] -> edx[4/4] (0.01)
 
 0.02
 0x00007fbfe024be4a: mov [r8d[4/8]] -> r10d[4/8] (0.01)
-  0x00007fbfe024be47: cmp [%ebx[4/4]] -> r8d[4/8] (0.0)
-    0x00007fbfe024bdaa: cmp [%edx[4/4]] -> %ebx[4/4] (0.0)
-      0x00007fbfe024bda5: mov [0x4[4/4]] -> %edx[4/4] (0.01)
+  0x00007fbfe024be47: cmp [ebx[4/4]] -> r8d[4/8] (0.0)
+    0x00007fbfe024bdaa: cmp [edx[4/4]] -> ebx[4/4] (0.0)
+      0x00007fbfe024bda5: mov [0x4[4/4]] -> edx[4/4] (0.01)
 
 0.02
 0x00007fbfe024be42: jmpq [r9[0/8]] -> 0x00007fbfe024be42 (0.0)
@@ -318,18 +318,18 @@ The following output will be derived from the perfasm output below:
       0x00007fbfe024bd54: mov [0x50(%rsp)[4/4]] -> r9[4/8] (0.02)
 
 0.02
-0x00007fbfe024be33: jge [%ecx[0/4]] -> 0x00007fbfe024be33 (0.0)
-  0x00007fbfe024be31: cmp [%esi[4/4]] -> %ecx[4/4] (0.0)
-    0x00007fbfe024bdb3: cmovg [%ecx[4/4]] -> %esi[4/4] (0.01)
-      0x00007fbfe024bdae: mov [0x4[4/4]] -> %ecx[4/4] (0.01)
+0x00007fbfe024be33: jge [ecx[0/4]] -> 0x00007fbfe024be33 (0.0)
+  0x00007fbfe024be31: cmp [esi[4/4]] -> ecx[4/4] (0.0)
+    0x00007fbfe024bdb3: cmovg [ecx[4/4]] -> esi[4/4] (0.01)
+      0x00007fbfe024bdae: mov [0x4[4/4]] -> ecx[4/4] (0.01)
 
 0.02
 0x00007fbfe024bdba: lea [%r12,%r10,8[8/8]] -> r13[8/8] (0.02)
 
 0.02
-0x00007fbfe024bd82: jle [%ebx[0/4]] -> 0x00007fbfe024bd82 (0.0)
-  0x00007fbfe024bd80: test [%ebx[4/4]] -> %ebx[4/4] (0.02)
-    0x00007fbfe024bd7d: mov [0xc(%rdi)[4/4]] -> %ebx[4/4] (0.0)
+0x00007fbfe024bd82: jle [ebx[0/4]] -> 0x00007fbfe024bd82 (0.0)
+  0x00007fbfe024bd80: test [ebx[4/4]] -> ebx[4/4] (0.02)
+    0x00007fbfe024bd7d: mov [0xc(%rdi)[4/4]] -> ebx[4/4] (0.0)
 
 0.02
 0x00007fbfe024bd61: mov [0x108(%r15)[4/4]] -> r10[4/8] (0.02)
@@ -339,12 +339,12 @@ The following output will be derived from the perfasm output below:
 
 0.02
 0x00007fbfe024bd3d: mov [r9[4/8]] -> 0x50(%rsp)[4/4] (0.02)
-  0x00007fbfe024bd38: vmovq [%xmm1[16/16]] -> r9[8/8] (0.0)
+  0x00007fbfe024bd38: vmovq [%xmm1[8/16]] -> r9[8/8] (0.0)
 
 0.01
-0x00007fbfe024be79: vmovd [%ebx[4/4]] -> %xmm5[4/16] (0.0)
-  0x00007fbfe024bdaa: cmp [%edx[4/4]] -> %ebx[4/4] (0.0)
-    0x00007fbfe024bda5: mov [0x4[4/4]] -> %edx[4/4] (0.01)
+0x00007fbfe024be79: vmovd [ebx[4/4]] -> %xmm5[4/16] (0.0)
+  0x00007fbfe024bdaa: cmp [edx[4/4]] -> ebx[4/4] (0.0)
+    0x00007fbfe024bda5: mov [0x4[4/4]] -> edx[4/4] (0.01)
 
 0.01
 0x00007fbfe024be38: vmovq [%xmm0[4/16]] -> rdi[4/8] (0.0)
@@ -352,36 +352,36 @@ The following output will be derived from the perfasm output below:
     0x00007fbfe024bd78: mov [0x60(%rsp)[4/4]] -> rdi[4/8] (0.01)
 
 0.01
-0x00007fbfe024be26: add [r10d[4/8]] -> %edx[4/4] (0.0)
+0x00007fbfe024be26: add [r10d[4/8]] -> edx[4/4] (0.0)
   0x00007fbfe024bdc0: xor [r10d[4/8]] -> r10d[4/8] (0.01)
     0x00007fbfe024bd88: mov [0x10(%rdi)[4/4]] -> r10d[4/8] (0.0)
 
 0.01
-0x00007fbfe024be18: add [r10d[4/8]] -> %edx[4/4] (0.0)
+0x00007fbfe024be18: add [r10d[4/8]] -> edx[4/4] (0.0)
   0x00007fbfe024bdc0: xor [r10d[4/8]] -> r10d[4/8] (0.01)
     0x00007fbfe024bd88: mov [0x10(%rdi)[4/4]] -> r10d[4/8] (0.0)
 
 0.01
-0x00007fbfe024bdbe: xor [%ecx[4/4]] -> %ecx[4/4] (0.0)
-  0x00007fbfe024bdae: mov [0x4[4/4]] -> %ecx[4/4] (0.01)
+0x00007fbfe024bdbe: xor [ecx[4/4]] -> ecx[4/4] (0.0)
+  0x00007fbfe024bdae: mov [0x4[4/4]] -> ecx[4/4] (0.01)
 
 0.01
-0x00007fbfe024bd9f: jg [%ebx[0/4]] -> 0x00007fbfe024bd9f (0.0)
-  0x00007fbfe024bd99: cmp [0x7ffffffc[4/4]] -> %ebx[4/4] (0.01)
+0x00007fbfe024bd9f: jg [ebx[0/4]] -> 0x00007fbfe024bd9f (0.0)
+  0x00007fbfe024bd99: cmp [0x4[4/4]] -> ebx[4/4] (0.01)
 
 0.01
 0x00007fbfe024bd31: jmp [] -> 0x00007fbfe024bd31 (0.01)
 
 0.0
-0x00007fbfe024be98: mov [0x1[4/4]] -> %ebp[4/4] (0.0)
+0x00007fbfe024be98: mov [0x4[4/4]] -> ebp[4/4] (0.0)
 
 0.0
-0x00007fbfe024be8c: jmpq [0x50(%rsp)[4/4]] -> 0x00007fbfe024be8c (0.0)
+0x00007fbfe024be8c: jmpq [0x50(%rsp)[0/4]] -> 0x00007fbfe024be8c (0.0)
 
 0.0
 0x00007fbfe024be87: mov [r9d[4/8]] -> 0x50(%rsp)[4/4] (0.0)
-  0x00007fbfe024be67: cmovl [%edi[4/4]] -> r9d[4/8] (0.0)
-    0x00007fbfe024be62: mov [0x80000000[4/4]] -> %edi[4/4] (0.0)
+  0x00007fbfe024be67: cmovl [edi[4/4]] -> r9d[4/8] (0.0)
+    0x00007fbfe024be62: mov [0x4[4/4]] -> edi[4/4] (0.0)
 
 0.0
 0x00007fbfe024be7d: vmovd [r11d[4/8]] -> %xmm4[4/16] (0.0)
@@ -389,7 +389,7 @@ The following output will be derived from the perfasm output below:
 
 0.0
 0x00007fbfe024be74: vmovq [rbp[4/8]] -> %xmm3[4/16] (0.0)
-  0x00007fbfe024bd68: add [0x1[4/4]] -> rbp[4/8] (0.0)
+  0x00007fbfe024bd68: add [0x4[4/4]] -> rbp[4/8] (0.0)
 
 0.0
 0x00007fbfe024be58: mov [r10d[4/8]] -> r9d[4/8] (0.0)
@@ -401,30 +401,30 @@ The following output will be derived from the perfasm output below:
   0x00007fbfe024bd8c: mov [0xc(%r12,%r10,8)[4/4]] -> r11d[4/8] (0.0)
 
 0.0
-0x00007fbfe024bdc6: jge [%ecx[0/4]] -> 0x00007fbfe024bdc6 (0.0)
-  0x00007fbfe024bdc3: cmp [r11d[4/8]] -> %ecx[4/4] (0.0)
+0x00007fbfe024bdc6: jge [ecx[0/4]] -> 0x00007fbfe024bdc6 (0.0)
+  0x00007fbfe024bdc3: cmp [r11d[4/8]] -> ecx[4/4] (0.0)
     0x00007fbfe024bd8c: mov [0xc(%r12,%r10,8)[4/4]] -> r11d[4/8] (0.0)
 
 0.0
-0x00007fbfe024bdb6: shl [0x3[4/4]] -> rax[4/8] (0.0)
+0x00007fbfe024bdb6: shl [0x4[4/4]] -> rax[4/8] (0.0)
 
 0.0
 0x00007fbfe024bd2d: jmp [] -> 0x00007fbfe024bd2d (0.0)
 
 0.0
-0x00007fbfe024bcd0: jge [%ecx[0/4]] -> 0x00007fbfe024bcd0 (0.0)
-  0x00007fbfe024bccd: cmp [r8d[4/8]] -> %ecx[4/4] (0.0)
-    0x00007fbfe024bcb5: vmovd [%xmm7[16/16]] -> r8d[8/8] (0.0)
+0x00007fbfe024bcd0: jge [ecx[0/4]] -> 0x00007fbfe024bcd0 (0.0)
+  0x00007fbfe024bccd: cmp [r8d[4/8]] -> ecx[4/4] (0.0)
+    0x00007fbfe024bcb5: vmovd [%xmm7[8/16]] -> r8d[8/8] (0.0)
 
 0.0
-0x00007fbfe024bca7: vmovq [%xmm3[16/16]] -> rbp[8/8] (0.0)
+0x00007fbfe024bca7: vmovq [%xmm3[8/16]] -> rbp[8/8] (0.0)
 
 0.0
 0x00007fbfe024bb4c: nopl [] -> 0x0(%rax)[2147483647/2147483647] (0.0)
 
 0.0
-0x00007fbfe024bb47: jmpq [%ebp[0/4]] -> 0x00007fbfe024bb47 (0.0)
-  0x00007fbfe024bb42: mov [0x1[4/4]] -> %ebp[4/4] (0.0)
+0x00007fbfe024bb47: jmpq [ebp[0/4]] -> 0x00007fbfe024bb47 (0.0)
+  0x00007fbfe024bb42: mov [0x4[4/4]] -> ebp[4/4] (0.0)
 
 0.0
 0x00007fbfe024bb3c: jne [r10d[0/8]] -> 0x00007fbfe024bb3c (0.0)

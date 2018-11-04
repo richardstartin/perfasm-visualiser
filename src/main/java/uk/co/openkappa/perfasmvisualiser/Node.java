@@ -122,13 +122,13 @@ public class Node {
         return new QWordOperand(registerName, token, Math.min(instructionDefinedWidth(instruction), 8));
       }
       if (registerName.startsWith("e")) {
-        return new DWordOperand(token, 4);
+        return new DWordOperand(registerName, token, 4);
       }
       if (registerName.length() == 2 && registerName.charAt(1) == 'x') {
-        return new WordOperand(token, 2);
+        return new WordOperand(registerName, token, 2);
       }
       if (registerName.length() == 2) {
-        return new ByteOperand(token);
+        return new ByteOperand(registerName, token);
       }
     }
     throw new IllegalStateException(token);
