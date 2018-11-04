@@ -3,10 +3,12 @@ package uk.co.openkappa.perfasmvisualiser;
 import uk.co.openkappa.perfasmvisualiser.operands.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
 import static uk.co.openkappa.perfasmvisualiser.Regexes.*;
 
 public class Node {
@@ -43,7 +45,7 @@ public class Node {
       }
     }
     List<String> tokens = tokenise(args);
-    List<Operand> input = tokens.stream().limit(tokens.size() - 1).map(token -> parse(iname, token)).collect(Collectors.toList());
+    List<Operand> input = tokens.stream().limit(tokens.size() - 1).map(token -> parse(iname, token)).collect(toList());
     Operand output = parse(iname, tokens.get(tokens.size() - 1));
     return new Node(profiledWeight, label, iname, IS_CONDITIONAL.matcher(iname).matches(), input, output);
   }
@@ -87,7 +89,11 @@ public class Node {
       }
       if (OFFSET_EXPR.matcher(token).matches()) {
         int width = instructionDefinedWidth(instruction);
-        return new MemoryAddressOperand(Math.max(width, 4), width, token);
+        int start = token.indexOf('(') + 1;
+        int end = token.indexOf(')');
+        List<Operand> operands = Arrays.stream(token.substring(start, end).split(","))
+                .map(t -> parse(instruction, t)).collect(toList());
+        return new MemoryAddressOperand(Math.max(width, 4), width, token, operands);
       }
       if (DECIMAL.matcher(token).matches()) {
         return new NumericOperand(4, Integer.parseInt(token));
@@ -165,7 +171,7 @@ public class Node {
     this.isConditional = isConditional;
     this.dependencies = dependencies.stream()
             .map(op -> op.hasUnknownWidth() ? op.adjustWidth(output.maxWidth, output.usedWidth) : op)
-            .collect(Collectors.toList());
+            .collect(toList());
     this.output = output;
   }
 

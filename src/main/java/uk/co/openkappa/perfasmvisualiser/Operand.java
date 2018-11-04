@@ -26,6 +26,10 @@ public abstract class Operand {
     return operand.name.equals(name);
   }
 
+  public boolean dependsOn(Operand operand) {
+    return operand.name.equals(name);
+  }
+
   public boolean isRoot() {
     return false;
   }

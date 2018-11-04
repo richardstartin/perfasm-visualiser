@@ -17,6 +17,11 @@ public class IndirectReferenceOperand extends Operand {
   }
 
   @Override
+  public boolean dependsOn(Operand operand) {
+    return this.operand.getName().equals(operand.getName());
+  }
+
+  @Override
   public Operand adjustWidth(int newWidth) {
     return new IndirectReferenceOperand(operand.adjustWidth(newWidth));
   }

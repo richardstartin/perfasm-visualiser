@@ -37,7 +37,7 @@ public class NodeStream {
       if (!operand.isRoot()) {
         for (int i = mark + 1; i < nodes.size(); ++i) {
           Node candidate = nodes.get(i);
-          if (operand.equals(candidate.getOutput())) {
+          if (operand.dependsOn(candidate.getOutput())) {
             visited.set(i);
             Link<String> cached = links.get(candidate.getLabel());
             if (null == cached) {
