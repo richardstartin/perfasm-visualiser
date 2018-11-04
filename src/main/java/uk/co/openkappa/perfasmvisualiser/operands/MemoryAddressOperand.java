@@ -24,8 +24,13 @@ public class MemoryAddressOperand extends Operand {
   }
 
   @Override
+  public boolean propagateWidth() {
+    return false;
+  }
+
+  @Override
   public Operand adjustWidth(int newWidth) {
-    return new MemoryAddressOperand(getMaxWidth(), newWidth, inputName, operands);
+    return this;
   }
 
   @Override

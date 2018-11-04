@@ -40,20 +40,25 @@ public class DataFlow {
     int usedWidth = node.getOutput().getUsedWidth();
     int width = usedWidth;
     if (chain.isLeaf()) {
-      width = node.getDependencies().stream().mapToInt(Operand::getUsedWidth).max().orElse(usedWidth);
+      width = node.getDependencies().stream().filter(Operand::propagateWidth).mapToInt(Operand::getUsedWidth).max().orElse(usedWidth);
     } else {
       for (Link<String> child : chain.getLinks()) {
         String l = child.getValue();
         propagateWidthUsage(accumulation, child);
-        width = Math.min(width, accumulation.get(l).getOutput().getUsedWidth());
+        Node n = accumulation.get(l);
+        if (n.getOutput().propagateWidth()) {
+          width = Math.min(width, accumulation.get(l).getOutput().getUsedWidth());
+        }
       }
     }
     int newWidth = Math.min(node.getOutput().getMaxWidth(), width);
+    Operand ouput = node.getOutput();
     List<Operand> dependencies = node.getDependencies()
             .stream()
-            .map(op -> op.adjustWidth(Math.min(newWidth, op.getMaxWidth())))
+            .map(op -> op.hasUnknownWidth() ? op.adjustWidth(ouput.maxWidth, ouput.maxWidth) : op)
             .collect(Collectors.toList());
-    accumulation.put(label, modifyOutput(node, dependencies, node.getOutput().adjustWidth(newWidth)));
+    boolean modifyOutput = node.getDependencies().stream().allMatch(Operand::propagateWidth);
+    accumulation.put(label, modifyOutput(node, dependencies, modifyOutput ? ouput.adjustWidth(newWidth) : ouput));
   }
 
   public String toJson() {

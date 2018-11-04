@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 import static uk.co.openkappa.perfasmvisualiser.Regexes.*;
@@ -141,9 +140,6 @@ public class Node {
   }
 
   private static int instructionDefinedWidth(String instruction) {
-    if (instruction.startsWith("vmov")) {
-      return 64;
-    }
     switch (instruction) {
       case "mov":
         return 4;
@@ -169,9 +165,7 @@ public class Node {
     this.label = label;
     this.instructionName = instructionName;
     this.isConditional = isConditional;
-    this.dependencies = dependencies.stream()
-            .map(op -> op.hasUnknownWidth() ? op.adjustWidth(output.maxWidth, output.usedWidth) : op)
-            .collect(toList());
+    this.dependencies = dependencies;
     this.output = output;
   }
 

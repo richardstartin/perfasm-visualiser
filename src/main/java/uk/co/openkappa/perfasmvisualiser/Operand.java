@@ -30,6 +30,10 @@ public abstract class Operand {
     return operand.name.equals(name);
   }
 
+  public boolean propagateWidth() {
+    return true;
+  }
+
   public boolean isRoot() {
     return false;
   }
