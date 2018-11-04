@@ -16,11 +16,11 @@ public class MemoryAddressOperand extends Operand {
 
   @Override
   public Operand adjustWidth(int newWidth) {
-    return new MemoryAddressOperand(getMaxWidth(), newWidth, registerName);
+    return new MemoryAddressOperand(getMaxWidth(), newWidth, inputName);
   }
 
   @Override
   public Operand adjustWidth(int newMaxWith, int newWidth) {
-    return new MemoryAddressOperand(newMaxWith, newWidth, registerName);
+    return new MemoryAddressOperand(newMaxWith, newWidth, inputName);
   }
 }

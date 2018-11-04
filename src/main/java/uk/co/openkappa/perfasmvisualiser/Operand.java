@@ -3,16 +3,16 @@ package uk.co.openkappa.perfasmvisualiser;
 public abstract class Operand {
   protected final int maxWidth;
   protected final int usedWidth;
-  protected final String registerName;
+  protected final String inputName;
   protected final String name;
 
-  public Operand(int maxWidth, int usedWidth, String name, String registerName) {
+  public Operand(int maxWidth, int usedWidth, String name, String inputName) {
     if (usedWidth > maxWidth)
       throw new IllegalStateException("Can't use " + usedWidth  + " > " + maxWidth);
     this.maxWidth = maxWidth;
     this.usedWidth = usedWidth;
     this.name = name;
-    this.registerName = registerName;
+    this.inputName = inputName;
   }
 
   @Override
@@ -42,6 +42,10 @@ public abstract class Operand {
     return name;
   }
 
+  public String getInputName() {
+    return inputName;
+  }
+
   public abstract Operand adjustWidth(int newWidth);
 
   public Operand adjustWidth(int newMaxWith, int newWidth) {
@@ -63,6 +67,6 @@ public abstract class Operand {
 
   @Override
   public String toString() {
-    return registerName + (isData() ? "[" + getUsedWidth() + "/" + getMaxWidth()  + "]" : "");
+    return inputName + (isData() ? "[" + getUsedWidth() + "/" + getMaxWidth()  + "]" : "");
   }
 }

@@ -7,7 +7,7 @@ public class IndirectReferenceOperand extends Operand {
   private final Operand operand;
 
   public IndirectReferenceOperand(Operand operand) {
-    super(operand.getMaxWidth(), operand.getUsedWidth(), operand.getName() + " (indirect)", operand.getName());
+    super(operand.getMaxWidth(), operand.getUsedWidth(), operand.getName(), "(" + operand.getInputName() + ")");
     this.operand = operand;
   }
 
