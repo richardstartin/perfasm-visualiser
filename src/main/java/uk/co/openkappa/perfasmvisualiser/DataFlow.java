@@ -45,10 +45,7 @@ public class DataFlow {
       for (Link<String> child : chain.getLinks()) {
         String l = child.getValue();
         propagateWidthUsage(accumulation, child);
-        Node n = accumulation.get(l);
-        if (n.getOutput().propagateWidth()) {
-          width = Math.min(width, accumulation.get(l).getOutput().getUsedWidth());
-        }
+        width = Math.min(width, accumulation.get(l).getOutput().getUsedWidth());
       }
     }
     int newWidth = Math.min(node.getOutput().getMaxWidth(), width);
